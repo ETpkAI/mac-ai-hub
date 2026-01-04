@@ -1,0 +1,130 @@
+---
+sidebar_position: 2
+sidebar_label: "Draw Things"
+---
+
+# Draw Things: The Best Native App for AI Image Generation
+
+**Draw Things** is hands-down the best way to generate AI images on your Mac. It's a free, native macOS app that runs entirely on your device using Apple's Metal API.
+
+## Why Draw Things?
+
+| Feature | Benefit |
+|---------|---------|
+| 🍎 **Native Mac App** | Built specifically for macOS, not a web wrapper |
+| 🔒 **100% Local** | No internet required, complete privacy |
+| ⚡ **Metal Optimized** | Uses Apple GPU acceleration for fast generation |
+| 🆓 **Free** | No subscription, no API costs |
+| 📱 **iPad Support** | Same app works on iPad with M-series chips |
+
+:::tip No Command Line Required!
+Unlike many AI tools, Draw Things has a beautiful graphical interface. Perfect for creators who want to focus on art, not terminal commands.
+:::
+
+## Installation
+
+### Method 1: App Store (Recommended)
+
+1. Open the **App Store** on your Mac
+2. Search for "Draw Things"
+3. Click **Get** to download
+
+### Method 2: Direct Download
+
+Visit [drawthings.ai](https://drawthings.ai) to download directly.
+
+## First-Time Setup
+
+### 1. Download a Model
+
+When you first open Draw Things, you'll need to download a model:
+
+1. Go to **Settings** (gear icon) → **Models**
+2. Recommended starter model: **Stable Diffusion XL Base**
+3. Click **Download** and wait for it to complete
+
+:::warning Storage Space
+SDXL models are ~6GB. Ensure you have sufficient disk space before downloading.
+:::
+
+### 2. Generate Your First Image
+
+1. Type a prompt in the text box, e.g.:
+   ```
+   A majestic snow leopard on a mountain peak, 
+   golden hour lighting, photorealistic, 8K
+   ```
+
+2. Click **Generate**
+
+3. Wait 30-60 seconds (first generation is slower due to model loading)
+
+## Recommended Settings for Apple Silicon
+
+### For 8GB Macs (M1/M2/M3 Base)
+
+| Setting | Value |
+|---------|-------|
+| Model | SD 1.5 or SDXL (with memory optimization) |
+| Image Size | 512×512 or 768×768 |
+| Steps | 20-25 |
+| Guidance | 7.0 |
+
+### For 16GB+ Macs (Pro/Max)
+
+| Setting | Value |
+|---------|-------|
+| Model | SDXL, SD 3, or custom fine-tunes |
+| Image Size | 1024×1024 or higher |
+| Steps | 25-30 |
+| Guidance | 7.5 |
+
+## Tips for Better Results
+
+### Prompt Engineering
+
+```
+✅ Good: "Portrait of a cyberpunk samurai, neon city background, 
+         rain reflections, cinematic lighting, highly detailed"
+
+❌ Bad:  "samurai in city"
+```
+
+### Negative Prompts
+Add these to avoid common issues:
+```
+blurry, low quality, distorted, ugly, 
+deformed hands, extra fingers, watermark
+```
+
+### Seed Consistency
+Lock the seed number to reproduce similar results with prompt variations.
+
+## Troubleshooting
+
+### "Out of memory" errors
+- Reduce image size
+- Close other applications
+- Enable "Low Memory Mode" in settings
+
+### Slow generation
+- First generation loads the model (normal to be slow)
+- Check Activity Monitor for memory pressure
+- Restart the app to clear cache
+
+### Model not loading
+- Verify download completed
+- Check **~/Library/Application Support/Draw Things/** for corrupted files
+
+## Model Recommendations
+
+| Model | Best For | VRAM Needed |
+|-------|----------|-------------|
+| SD 1.5 | General, fast | 4GB |
+| SDXL | High quality, detailed | 8GB |
+| SD 3 | Latest generation | 12GB+ |
+| Flux | Photorealistic | 12GB+ |
+
+---
+
+**Next:** Learn about [Pinokio](/docs/apps/pinokio) for one-click installation of more AI tools, or explore [GGUF models](/docs/models/gguf-basics) for running large language models.

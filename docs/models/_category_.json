@@ -1,0 +1,8 @@
+{
+    "label": "Model Vault",
+    "position": 3,
+    "link": {
+        "type": "generated-index",
+        "description": "Learn about GGUF models, quantization, and download the best models for your Mac."
+    }
+}

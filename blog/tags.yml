@@ -1,0 +1,19 @@
+announcement:
+  label: Announcement
+  description: Official announcements
+  permalink: /announcement
+
+getting-started:
+  label: Getting Started
+  description: Beginner guides
+  permalink: /getting-started
+
+workflow:
+  label: Workflow
+  description: Weekly workflow tutorials
+  permalink: /workflow
+
+tutorial:
+  label: Tutorial
+  description: Step-by-step tutorials
+  permalink: /tutorial

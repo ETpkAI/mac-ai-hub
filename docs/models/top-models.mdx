@@ -1,0 +1,180 @@
+---
+sidebar_position: 2
+sidebar_label: "Top Models"
+---
+
+# Essential Models for Mac
+
+A curated list of the best large language models optimized for Apple Silicon. All recommendations are in GGUF format for maximum compatibility.
+
+## Quick Reference Table
+
+| Model | Parameters | Min RAM | Recommended Quant | Best For | Download |
+|-------|------------|---------|-------------------|----------|----------|
+| **Llama 3.1 8B** | 8B | 8GB | Q4_K_M | General chat, coding | [HuggingFace](https://huggingface.co/meta-llama) |
+| **Mistral 7B** | 7B | 8GB | Q4_K_M | Fast responses, instruction-following | [HuggingFace](https://huggingface.co/mistralai) |
+| **Gemma 2 9B** | 9B | 10GB | Q4_K_M | Balanced performance | [HuggingFace](https://huggingface.co/google) |
+| **Llama 3.1 70B** | 70B | 48GB | Q4_K_M | Advanced reasoning | [HuggingFace](https://huggingface.co/meta-llama) |
+| **Qwen 2.5 32B** | 32B | 24GB | Q4_K_M | Multilingual, coding | [HuggingFace](https://huggingface.co/Qwen) |
+| **DeepSeek Coder** | 33B | 24GB | Q4_K_M | Code generation | [HuggingFace](https://huggingface.co/deepseek-ai) |
+
+## Detailed Recommendations
+
+### 🥇 For 8GB Macs (M1/M2/M3 Base)
+
+Your options are limited but still powerful:
+
+#### Llama 3.1 8B Instruct
+```
+File: Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf
+Size: ~4.9GB
+Speed: ~15-20 tokens/sec
+```
+
+**Pros:**
+- Excellent instruction following
+- Strong coding capabilities
+- Great at reasoning tasks
+
+**Cons:**
+- 8B limit means less knowledge depth
+
+:::tip Memory Tip
+Close Safari and other apps before running. Every GB counts on 8GB machines!
+:::
+
+---
+
+#### Mistral 7B Instruct v0.3
+```
+File: Mistral-7B-Instruct-v0.3-Q4_K_M.gguf
+Size: ~4.4GB
+Speed: ~20-25 tokens/sec
+```
+
+**Pros:**
+- Fastest 7B model
+- Excellent at following instructions
+- Lower memory usage
+
+---
+
+### 🥈 For 16-18GB Macs (M2/M3 Pro)
+
+You can run medium-sized models comfortably:
+
+#### Gemma 2 9B Instruct
+```
+File: gemma-2-9b-it-Q5_K_M.gguf
+Size: ~6.5GB
+Speed: ~12-18 tokens/sec
+```
+
+**Pros:**
+- Google's latest architecture
+- Excellent at nuanced responses
+- Strong multilingual support
+
+---
+
+#### Qwen 2.5 14B Instruct
+```
+File: Qwen2.5-14B-Instruct-Q4_K_M.gguf
+Size: ~8.5GB
+Speed: ~10-15 tokens/sec
+```
+
+**Pros:**
+- Excellent for Chinese + English
+- Strong coding abilities
+- Great general knowledge
+
+---
+
+### 🥇 For 32-64GB Macs (M2/M3 Max)
+
+Access to powerful large models:
+
+#### Llama 3.1 70B Instruct
+```
+File: Meta-Llama-3.1-70B-Instruct-Q4_K_M.gguf
+Size: ~40GB
+Speed: ~8-12 tokens/sec
+```
+
+**Pros:**
+- Near GPT-4 quality
+- Exceptional reasoning
+- Comprehensive knowledge
+
+:::warning Requires 48GB+ RAM
+70B models need significant memory. Use Q4_K_M quantization and close all other apps.
+:::
+
+---
+
+#### Qwen 2.5 32B Instruct
+```
+File: Qwen2.5-32B-Instruct-Q4_K_M.gguf
+Size: ~19GB
+Speed: ~12-16 tokens/sec
+```
+
+**Pros:**
+- Best-in-class for 32B size
+- Excellent coding
+- Fast for its size
+
+---
+
+### 💻 For Coding Specifically
+
+| Model | Parameters | Specialty |
+|-------|------------|-----------|
+| **DeepSeek Coder V2** | 16B | General coding |
+| **CodeLlama 34B** | 34B | Python, JavaScript |
+| **Qwen 2.5 Coder** | 7B-32B | Multi-language |
+| **StarCoder2** | 15B | Multi-language |
+
+:::tip Coding Model Tips
+- Use Q5_K_M or Q8_0 for code—precision matters for syntax
+- Increase context length for larger codebases
+- Consider models fine-tuned for your language
+:::
+
+## How to Download
+
+### Using Ollama (Easiest)
+```bash
+ollama pull llama3.1:8b
+ollama pull mistral:7b
+ollama pull gemma2:9b
+```
+
+### Direct from HuggingFace
+
+1. Visit [huggingface.co](https://huggingface.co)
+2. Search for the model
+3. Go to **Files and versions**
+4. Download the `.gguf` file matching your RAM
+
+### Using `huggingface-cli`
+```bash
+pip install huggingface_hub
+huggingface-cli download TheBloke/Llama-2-7B-GGUF llama-2-7b.Q4_K_M.gguf
+```
+
+## Performance Expectations
+
+### Tokens per Second by Hardware
+
+| Hardware | 7B Model | 13B Model | 70B Model |
+|----------|----------|-----------|-----------|
+| M1 8GB | 15-20 t/s | ❌ | ❌ |
+| M2 Pro 16GB | 20-25 t/s | 12-18 t/s | ❌ |
+| M3 Max 64GB | 25-30 t/s | 18-22 t/s | 8-12 t/s |
+| M2 Ultra 192GB | 30+ t/s | 22-28 t/s | 15-20 t/s |
+
+---
+
+**Previous:** [GGUF Basics](/docs/models/gguf-basics) - Understanding quantization and memory requirements

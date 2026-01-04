@@ -1,0 +1,132 @@
+---
+sidebar_position: 1
+sidebar_label: "Setup Guide"
+---
+
+# The Golden Path: Preparing Your Mac for AI
+
+Before diving into AI applications, let's ensure your Mac is properly configured. This guide will walk you through the essential setup steps.
+
+## Prerequisites
+
+- A Mac with Apple Silicon (M1, M2, or M3 chip)
+- macOS Ventura (13.0) or later
+- At least 8GB of unified memory (16GB+ recommended)
+
+## Step 1: Install Homebrew
+
+[Homebrew](https://brew.sh) is the package manager for macOS. It's essential for installing developer tools and AI software.
+
+Open **Terminal** (press `Cmd + Space`, type "Terminal", press Enter) and paste:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+After installation, follow the on-screen instructions to add Homebrew to your PATH.
+
+:::tip Verification
+Run `brew --version` to confirm installation. You should see a version number like `Homebrew 4.x.x`.
+:::
+
+## Step 2: Install Python 3.10
+
+:::warning Python Version Warning
+**Use Python 3.10 or 3.11, NOT 3.12+**
+
+Many AI libraries (especially those using PyTorch or TensorFlow) have compatibility issues with Python 3.12+. Stick with 3.10 for the smoothest experience.
+:::
+
+Install Python 3.10 via Homebrew:
+
+```bash
+brew install python@3.10
+```
+
+Set it as your default Python (optional):
+
+```bash
+echo 'export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+### Verify Installation
+
+```bash
+python3.10 --version
+# Should output: Python 3.10.x
+```
+
+## Step 3: Create a Virtual Environment
+
+Always use virtual environments to avoid dependency conflicts:
+
+```bash
+# Create a directory for AI projects
+mkdir -p ~/AI-Projects
+cd ~/AI-Projects
+
+# Create a virtual environment
+python3.10 -m venv ai-env
+
+# Activate it
+source ai-env/bin/activate
+```
+
+:::tip Pro Tip
+Add an alias to your `~/.zshrc` for quick activation:
+```bash
+echo 'alias aienv="source ~/AI-Projects/ai-env/bin/activate"' >> ~/.zshrc
+```
+Now just type `aienv` to activate your AI environment!
+:::
+
+## Step 4: Install Essential Tools
+
+With your virtual environment activated:
+
+```bash
+# Upgrade pip
+pip install --upgrade pip
+
+# Install common AI libraries (Apple Silicon optimized)
+pip install torch torchvision torchaudio
+pip install transformers accelerate
+pip install numpy pandas
+```
+
+## Step 5: Verify Metal Support
+
+Apple's **Metal** framework enables GPU acceleration on Mac. Verify it's working:
+
+```python
+import torch
+print(f"MPS available: {torch.backends.mps.is_available()}")
+print(f"MPS built: {torch.backends.mps.is_built()}")
+```
+
+Both should return `True`.
+
+## Troubleshooting
+
+### "Command not found: brew"
+Run the following and restart Terminal:
+```bash
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+### Python conflicts
+If you have multiple Python versions, always use explicit version commands:
+```bash
+python3.10 -m pip install <package>
+```
+
+### Xcode Command Line Tools
+Some packages require Apple's developer tools:
+```bash
+xcode-select --install
+```
+
+---
+
+✅ **You're ready!** Proceed to [Draw Things](/docs/apps/draw-things) for native image generation or [Pinokio](/docs/apps/pinokio) for one-click AI installers.

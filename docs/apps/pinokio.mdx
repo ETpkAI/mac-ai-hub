@@ -1,0 +1,152 @@
+---
+sidebar_position: 3
+sidebar_label: "Pinokio"
+---
+
+# Pinokio: One-Click AI App Installer
+
+**Pinokio** is a revolutionary tool that lets you install and run complex AI applications with a single click. No command line, no dependency management, no headaches.
+
+## What is Pinokio?
+
+Think of Pinokio as an "App Store for AI". It automates:
+- Installing Python environments
+- Managing dependencies
+- Downloading models
+- Configuring settings
+
+
+:::tip Perfect for Beginners
+Pinokio abstracts away all the technical complexity. Install ComfyUI, Stable Diffusion WebUI, or Ollama without touching the terminal.
+:::
+
+## Installation
+
+### Step 1: Download Pinokio
+
+Visit [pinokio.computer](https://pinokio.computer) and download the macOS version.
+
+### Step 2: Bypass macOS Security Warning
+
+When you first open Pinokio, macOS may block it because it's from an "unidentified developer".
+
+:::warning Required Step
+Apple's Gatekeeper blocks apps from unknown developers. You **must** follow these steps to run Pinokio.
+:::
+
+**Option A: System Preferences**
+1. Go to **System Settings** → **Privacy & Security**
+2. Scroll down to **Security**
+3. Click **"Open Anyway"** next to the Pinokio warning
+
+**Option B: Terminal Command (if Option A doesn't work)**
+
+Open Terminal and run:
+
+```bash
+xattr -cr /Applications/Pinokio.app
+```
+
+This removes all quarantine attributes from the app.
+
+:::tip What does `xattr -cr` do?
+- `xattr` = extended attributes command
+- `-c` = clear all attributes
+- `-r` = recursive (affects all files in the app bundle)
+
+This is safe for apps you trust. Apple's Gatekeeper adds these attributes to downloaded apps.
+:::
+
+### Step 3: First Launch
+
+1. Open Pinokio
+2. Wait for initial setup (downloads Node.js runtime)
+3. Browse the app library
+
+## Recommended Apps to Install
+
+### For Creators (No Coding Required)
+
+| App | Description | RAM Needed |
+|-----|-------------|------------|
+| **ComfyUI** | Node-based image generation | 8GB+ |
+| **Stable Diffusion WebUI** | Classic SD interface | 8GB+ |
+| **Fooocus** | Simplified SD experience | 8GB+ |
+
+### For Developers
+
+| App | Description | RAM Needed |
+|-----|-------------|------------|
+| **Ollama** | Run LLMs locally | 8GB+ |
+| **Text Generation WebUI** | Chat with LLMs | 16GB+ |
+| **Open WebUI** | Beautiful Ollama frontend | 8GB+ |
+
+## Installing an App
+
+1. Open Pinokio
+2. Click **Discover** in the sidebar
+3. Find your desired app (e.g., "ComfyUI")
+4. Click **Download**
+5. Wait for dependencies to install
+6. Click **Start** when complete
+
+## Managing Installed Apps
+
+### Starting/Stopping Apps
+Click the app in your library → **Start** or **Stop**
+
+### Updating Apps
+Click the app → **Update** (if available)
+
+### Viewing Logs
+Click the app → **Terminal** to see output
+
+### Uninstalling
+Click the app → **Settings** → **Delete**
+
+## Troubleshooting
+
+### "App requires Rosetta"
+Some apps need Rosetta 2 for Intel compatibility:
+```bash
+softwareupdate --install-rosetta
+```
+
+### Installation stuck
+1. Check Terminal output for errors
+2. Try **Stop** then **Start** again
+3. Delete and reinstall the app
+
+### "Port already in use"
+Another app is using the same port. Either:
+- Stop the conflicting app
+- Change the port in the app's settings
+
+### Slow downloads
+Model downloads can be large (5-20GB). Be patient and ensure stable internet.
+
+## Best Practices
+
+### Storage Management
+Pinokio apps and models can consume significant disk space:
+- Check **Settings** → **Storage** to see usage
+- Delete unused models periodically
+- Consider an external SSD for model storage
+
+### Memory Optimization
+When running multiple apps:
+- Stop apps you're not using
+- Monitor with Activity Monitor
+- Restart Pinokio if memory pressure is high
+
+### Regular Updates
+Keep apps updated for:
+- Performance improvements
+- Security patches
+- New features
+
+---
+
+**Next Steps:**
+- [GGUF Basics](/docs/models/gguf-basics) - Understand model formats
+- [Top Models](/docs/models/top-models) - Curated model recommendations

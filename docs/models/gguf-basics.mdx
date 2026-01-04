@@ -1,0 +1,109 @@
+---
+sidebar_position: 1
+sidebar_label: "GGUF Basics"
+---
+
+import RamCalc from '@site/src/components/RamCalc';
+
+# Understanding GGUF & RAM
+
+**GGUF** (GPT-Generated Unified Format) is the standard format for running large language models locally. This guide explains how it works and helps you choose the right model for your Mac.
+
+## What is GGUF?
+
+GGUF is a binary format designed by the [llama.cpp](https://github.com/ggml-org/llama.cpp) project. It replaced the older GGML format with key improvements:
+
+| Feature | Benefit |
+|---------|---------|
+| **Memory Mapping** | Models load instantly via `mmap()` |
+| **Self-Contained** | All metadata stored in one file |
+| **Extensible** | Supports new architectures easily |
+| **Cross-Platform** | Works on Mac, Windows, Linux |
+
+:::tip Why This Matters for Mac
+Memory mapping means macOS loads only the pages it needs, reducing startup time and memory pressure. Your 7B model doesn't need 5GB loaded all at once!
+:::
+
+## Understanding Quantization
+
+**Quantization** reduces model size by lowering numerical precision. Think of it like JPEG compression for images—you trade some quality for much smaller files.
+
+### Original vs Quantized
+
+| Format | Precision | Model Size (7B) | Quality |
+|--------|-----------|-----------------|---------|
+| FP32 | 32-bit float | ~28GB | Perfect |
+| FP16 | 16-bit float | ~14GB | Near-perfect |
+| Q8_0 | 8-bit int | ~7GB | Excellent |
+| Q5_K_M | 5-bit mixed | ~5GB | Very Good |
+| **Q4_K_M** | 4-bit mixed | ~4GB | **Good (Sweet Spot)** |
+| Q4_0 | 4-bit int | ~3.5GB | Acceptable |
+| Q2_K | 2-bit | ~2.5GB | Degraded |
+
+### The "K" in Quantization
+
+Quantizations ending in `_K` (like Q4_K_M) use **k-quant**, which applies different precision to different layers:
+- **Critical layers** (attention): Higher precision
+- **Less critical layers**: Lower precision
+
+This preserves model quality while maximizing compression.
+
+:::warning Avoid Q2_K and Q3_K
+These aggressive quantizations noticeably degrade output quality. Stick to Q4_K_M or higher for good results.
+:::
+
+## RAM Calculator
+
+Use this calculator to find the right model for your Mac:
+
+<RamCalc />
+
+## Memory Math Explained
+
+### The Formula
+
+```
+Required RAM = Model Size × 1.2 + Context Memory + System Reserve
+```
+
+Where:
+- **Model Size**: The GGUF file size
+- **1.2 multiplier**: Working memory overhead
+- **Context Memory**: ~2GB for 8K context
+- **System Reserve**: 2-6GB for macOS
+
+### Real-World Examples
+
+| Mac | Total RAM | System Use | Available | Max Model |
+|-----|-----------|------------|-----------|-----------|
+| M1 Air | 8GB | ~2GB | ~6GB | 7B Q4_K_M |
+| M2 Pro | 16GB | ~4GB | ~12GB | 13B Q4_K_M |
+| M3 Max | 64GB | ~6GB | ~58GB | 70B Q4_K_M |
+| M2 Ultra | 192GB | ~10GB | ~180GB | 120B+ |
+
+## Choosing the Right Quantization
+
+### For General Use: Q4_K_M (Recommended)
+- Best balance of size vs quality
+- Works well for chat, writing, coding
+- Minimal perplexity loss (~0.5%)
+
+### For Coding/Logic: Q5_K_M or Q8_0
+- Higher precision preserves reasoning
+- Worth the extra memory for technical tasks
+
+### For Maximum Context: Q4_0
+- Smallest practical size
+- Frees RAM for longer conversations
+
+## Download Sources
+
+:::tip Safe Download Sources
+- **HuggingFace** - [huggingface.co](https://huggingface.co) (Official models)
+- **TheBloke** - Community quantizations (very reliable)
+- **Bartowski** - High-quality community quants
+:::
+
+---
+
+**Next:** Check out our [Top Models](/docs/models/top-models) guide for specific recommendations tailored to Mac.
