@@ -1,11 +1,30 @@
 {
-    "title": "Mac AI Pilot",
-    "tagline": "Apple Silicon 本地 AI 完全指南",
-    "theme.navbar.title": "Mac AI Pilot",
-    "theme.docs.sidebar.collapseButtonTitle": "收起侧边栏",
-    "theme.docs.sidebar.expandButtonTitle": "展开侧边栏",
-    "theme.ColorModeToggle.arialabel": "切换颜色模式（当前为 {mode}）",
-    "theme.docs.versionBadge.label": "版本：{versionLabel}",
-    "theme.blog.readingTime.plurals": "{readingTime} 分钟阅读",
-    "theme.TOCCollapsible.toggleButtonLabel": "本页目录"
+  "title": {
+    "message": "Mac AI Pilot",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Mac AI Pilot Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Start Here": {
+    "message": "开始使用",
+    "description": "Navbar item with label Start Here"
+  },
+  "item.label.Model Vault": {
+    "message": "模型库",
+    "description": "Navbar item with label Model Vault"
+  },
+  "item.label.App Lab": {
+    "message": "应用实验室",
+    "description": "Navbar item with label App Lab"
+  },
+  "item.label.Workflows": {
+    "message": "工作流",
+    "description": "Navbar item with label Workflows"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
 }

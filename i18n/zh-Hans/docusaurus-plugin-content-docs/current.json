@@ -1,0 +1,22 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.App Guides": {
+    "message": "App Guides",
+    "description": "The label for category 'App Guides' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.App Guides.link.generated-index.description": {
+    "message": "Guides for setting up and using AI applications on your Mac.",
+    "description": "The generated-index page description for category 'App Guides' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Model Vault": {
+    "message": "Model Vault",
+    "description": "The label for category 'Model Vault' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Model Vault.link.generated-index.description": {
+    "message": "Learn about GGUF models, quantization, and download the best models for your Mac.",
+    "description": "The generated-index page description for category 'Model Vault' in sidebar 'tutorialSidebar'"
+  }
+}
