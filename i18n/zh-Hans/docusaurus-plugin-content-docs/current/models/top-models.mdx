@@ -1,0 +1,160 @@
+---
+sidebar_position: 2
+sidebar_label: "精选模型"
+---
+
+# Mac 精选模型
+
+为 Apple Silicon 优化的最佳大语言模型精选列表。所有推荐均为 GGUF 格式以获得最大兼容性。
+
+## 快速参考表
+
+| 模型 | 参数量 | 最低内存 | 推荐量化 | 最适合 | 下载 |
+|------|--------|----------|----------|--------|------|
+| **Llama 3.1 8B** | 8B | 8GB | Q4_K_M | 通用聊天、编程 | [HuggingFace](https://huggingface.co/meta-llama) |
+| **Mistral 7B** | 7B | 8GB | Q4_K_M | 快速响应、指令遵循 | [HuggingFace](https://huggingface.co/mistralai) |
+| **Gemma 2 9B** | 9B | 10GB | Q4_K_M | 均衡性能 | [HuggingFace](https://huggingface.co/google) |
+| **Llama 3.1 70B** | 70B | 48GB | Q4_K_M | 高级推理 | [HuggingFace](https://huggingface.co/meta-llama) |
+| **Qwen 2.5 32B** | 32B | 24GB | Q4_K_M | 多语言、编程 | [HuggingFace](https://huggingface.co/Qwen) |
+| **DeepSeek Coder** | 33B | 24GB | Q4_K_M | 代码生成 | [HuggingFace](https://huggingface.co/deepseek-ai) |
+
+## 详细推荐
+
+### 🥇 8GB Mac（M1/M2/M3 基础版）
+
+选择有限但依然强大：
+
+#### Llama 3.1 8B Instruct
+```
+文件：Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf
+大小：~4.9GB
+速度：~15-20 tokens/秒
+```
+
+**优点：**
+- 出色的指令遵循能力
+- 强大的编程能力
+- 擅长推理任务
+
+**缺点：**
+- 8B 限制意味着知识深度较低
+
+:::tip 内存提示
+运行模型前关闭 Safari 和其他应用。在 8GB 机器上每一 GB 都很重要！
+:::
+
+---
+
+#### Mistral 7B Instruct v0.3
+```
+文件：Mistral-7B-Instruct-v0.3-Q4_K_M.gguf
+大小：~4.4GB
+速度：~20-25 tokens/秒
+```
+
+**优点：**
+- 最快的 7B 模型
+- 出色的指令遵循能力
+- 较低的内存使用
+
+---
+
+### 🥈 16-18GB Mac（M2/M3 Pro）
+
+可以舒适运行中型模型：
+
+#### Gemma 2 9B Instruct
+```
+文件：gemma-2-9b-it-Q5_K_M.gguf
+大小：~6.5GB
+速度：~12-18 tokens/秒
+```
+
+**优点：**
+- Google 最新架构
+- 出色的细致回复
+- 强大的多语言支持
+
+---
+
+#### Qwen 2.5 14B Instruct
+```
+文件：Qwen2.5-14B-Instruct-Q4_K_M.gguf
+大小：~8.5GB
+速度：~10-15 tokens/秒
+```
+
+**优点：**
+- 中英文双语出色
+- 强大的编程能力
+- 丰富的通用知识
+
+---
+
+### 🥇 32-64GB Mac（M2/M3 Max）
+
+可使用强大的大型模型：
+
+#### Llama 3.1 70B Instruct
+```
+文件：Meta-Llama-3.1-70B-Instruct-Q4_K_M.gguf
+大小：~40GB
+速度：~8-12 tokens/秒
+```
+
+**优点：**
+- 接近 GPT-4 质量
+- 卓越的推理能力
+- 全面的知识
+
+:::warning 需要 48GB+ 内存
+70B 模型需要大量内存。使用 Q4_K_M 量化并关闭所有其他应用。
+:::
+
+---
+
+### 💻 编程专用
+
+| 模型 | 参数量 | 专长 |
+|------|--------|------|
+| **DeepSeek Coder V2** | 16B | 通用编程 |
+| **CodeLlama 34B** | 34B | Python、JavaScript |
+| **Qwen 2.5 Coder** | 7B-32B | 多语言 |
+| **StarCoder2** | 15B | 多语言 |
+
+:::tip 编程模型提示
+- 对代码使用 Q5_K_M 或 Q8_0——精度对语法很重要
+- 为更大的代码库增加上下文长度
+- 考虑针对您使用的语言进行微调的模型
+:::
+
+## 如何下载
+
+### 使用 Ollama（最简单）
+```bash
+ollama pull llama3.1:8b
+ollama pull mistral:7b
+ollama pull gemma2:9b
+```
+
+### 从 HuggingFace 直接下载
+
+1. 访问 [huggingface.co](https://huggingface.co)
+2. 搜索模型
+3. 进入 **Files and versions**
+4. 下载与您内存匹配的 `.gguf` 文件
+
+## 性能预期
+
+### 各硬件 Tokens/秒
+
+| 硬件 | 7B 模型 | 13B 模型 | 70B 模型 |
+|------|---------|----------|----------|
+| M1 8GB | 15-20 t/s | ❌ | ❌ |
+| M2 Pro 16GB | 20-25 t/s | 12-18 t/s | ❌ |
+| M3 Max 64GB | 25-30 t/s | 18-22 t/s | 8-12 t/s |
+| M2 Ultra 192GB | 30+ t/s | 22-28 t/s | 15-20 t/s |
+
+---
+
+**上一篇：** [GGUF 基础](/docs/models/gguf-basics) - 了解量化和内存要求

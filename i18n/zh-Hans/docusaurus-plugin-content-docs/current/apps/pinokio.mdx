@@ -1,0 +1,114 @@
+---
+sidebar_position: 3
+sidebar_label: "Pinokio"
+---
+
+# Pinokio：一键 AI 应用安装器
+
+**Pinokio** 是一个革命性的工具，让您只需点击一下即可安装和运行复杂的 AI 应用。无需命令行，无需管理依赖，无需头疼。
+
+## 什么是 Pinokio？
+
+把 Pinokio 想象成 "AI 应用商店"。它自动化了：
+- 安装 Python 环境
+- 管理依赖
+- 下载模型
+- 配置设置
+
+:::tip 非常适合初学者
+Pinokio 隐藏了所有技术复杂性。无需触碰终端即可安装 ComfyUI、Stable Diffusion WebUI 或 Ollama。
+:::
+
+## 安装
+
+### 步骤 1：下载 Pinokio
+
+访问 [pinokio.computer](https://pinokio.computer) 下载 macOS 版本。
+
+### 步骤 2：绕过 macOS 安全警告
+
+首次打开 Pinokio 时，macOS 可能会因为它来自"未知开发者"而阻止它。
+
+:::warning 必要步骤
+Apple 的守门人会阻止来自未知开发者的应用。您**必须**按照以下步骤才能运行 Pinokio。
+:::
+
+**方法 A：系统偏好设置**
+1. 进入 **系统设置** → **隐私与安全性**
+2. 向下滚动到 **安全性**
+3. 点击 Pinokio 警告旁边的 **"仍要打开"**
+
+**方法 B：终端命令（如果方法 A 不起作用）**
+
+打开终端并运行：
+
+```bash
+xattr -cr /Applications/Pinokio.app
+```
+
+这将移除应用的所有隔离属性。
+
+:::tip `xattr -cr` 是什么意思？
+- `xattr` = 扩展属性命令
+- `-c` = 清除所有属性
+- `-r` = 递归（影响应用包中的所有文件）
+
+对于您信任的应用，这是安全的。Apple 的守门人会为下载的应用添加这些属性。
+:::
+
+### 步骤 3：首次启动
+
+1. 打开 Pinokio
+2. 等待初始设置（下载 Node.js 运行时）
+3. 浏览应用库
+
+## 推荐安装的应用
+
+### 创作者专用（无需编程）
+
+| 应用 | 描述 | 需要内存 |
+|------|------|----------|
+| **ComfyUI** | 节点式图像生成 | 8GB+ |
+| **Stable Diffusion WebUI** | 经典 SD 界面 | 8GB+ |
+| **Fooocus** | 简化的 SD 体验 | 8GB+ |
+
+### 开发者专用
+
+| 应用 | 描述 | 需要内存 |
+|------|------|----------|
+| **Ollama** | 本地运行大语言模型 | 8GB+ |
+| **Text Generation WebUI** | 与 LLM 聊天 | 16GB+ |
+| **Open WebUI** | 精美的 Ollama 前端 | 8GB+ |
+
+## 安装应用
+
+1. 打开 Pinokio
+2. 点击侧边栏的 **发现**
+3. 找到所需应用（如 "ComfyUI"）
+4. 点击 **下载**
+5. 等待依赖安装
+6. 完成后点击 **启动**
+
+## 故障排除
+
+### "应用需要 Rosetta"
+某些应用需要 Rosetta 2 来实现 Intel 兼容性：
+```bash
+softwareupdate --install-rosetta
+```
+
+### 安装卡住
+1. 检查终端输出中的错误
+2. 尝试 **停止** 然后重新 **启动**
+3. 删除并重新安装应用
+
+### "端口已被使用"
+另一个应用正在使用相同的端口。可以：
+- 停止冲突的应用
+- 在应用设置中更改端口
+
+---
+
+**下一步：**
+- [GGUF 基础](/docs/models/gguf-basics) - 了解模型格式
+- [精选模型](/docs/models/top-models) - 精选模型推荐

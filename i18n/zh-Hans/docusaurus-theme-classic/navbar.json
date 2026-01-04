@@ -1,0 +1,11 @@
+{
+    "title": "Mac AI Pilot",
+    "tagline": "Apple Silicon 本地 AI 完全指南",
+    "theme.navbar.title": "Mac AI Pilot",
+    "theme.docs.sidebar.collapseButtonTitle": "收起侧边栏",
+    "theme.docs.sidebar.expandButtonTitle": "展开侧边栏",
+    "theme.ColorModeToggle.arialabel": "切换颜色模式（当前为 {mode}）",
+    "theme.docs.versionBadge.label": "版本：{versionLabel}",
+    "theme.blog.readingTime.plurals": "{readingTime} 分钟阅读",
+    "theme.TOCCollapsible.toggleButtonLabel": "本页目录"
+}

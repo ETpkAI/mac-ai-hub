@@ -1,0 +1,8 @@
+{
+    "label": "模型库",
+    "position": 3,
+    "link": {
+        "type": "generated-index",
+        "description": "了解 GGUF 模型、量化，以及下载适合您 Mac 的最佳模型。"
+    }
+}

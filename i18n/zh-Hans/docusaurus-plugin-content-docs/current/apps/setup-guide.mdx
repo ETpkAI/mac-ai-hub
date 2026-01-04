@@ -1,0 +1,132 @@
+---
+sidebar_position: 1
+sidebar_label: "安装指南"
+---
+
+# 黄金路径：为 AI 准备您的 Mac
+
+在开始使用 AI 应用之前，让我们确保您的 Mac 已正确配置。本指南将引导您完成必要的设置步骤。
+
+## 前置要求
+
+- 搭载 Apple Silicon 的 Mac（M1、M2 或 M3 芯片）
+- macOS Ventura (13.0) 或更高版本
+- 至少 8GB 统一内存（建议 16GB+）
+
+## 步骤 1：安装 Homebrew
+
+[Homebrew](https://brew.sh) 是 macOS 的包管理器。它对于安装开发工具和 AI 软件至关重要。
+
+打开 **终端**（按 `Cmd + 空格`，输入"终端"，按回车）并粘贴：
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+安装完成后，按照屏幕上的说明将 Homebrew 添加到您的 PATH。
+
+:::tip 验证安装
+运行 `brew --version` 确认安装成功。您应该看到类似 `Homebrew 4.x.x` 的版本号。
+:::
+
+## 步骤 2：安装 Python 3.10
+
+:::warning Python 版本警告
+**使用 Python 3.10 或 3.11，不要使用 3.12+**
+
+许多 AI 库（特别是使用 PyTorch 或 TensorFlow 的库）与 Python 3.12+ 存在兼容性问题。坚持使用 3.10 以获得最顺畅的体验。
+:::
+
+通过 Homebrew 安装 Python 3.10：
+
+```bash
+brew install python@3.10
+```
+
+将其设置为默认 Python（可选）：
+
+```bash
+echo 'export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+### 验证安装
+
+```bash
+python3.10 --version
+# 应输出：Python 3.10.x
+```
+
+## 步骤 3：创建虚拟环境
+
+始终使用虚拟环境以避免依赖冲突：
+
+```bash
+# 创建 AI 项目目录
+mkdir -p ~/AI-Projects
+cd ~/AI-Projects
+
+# 创建虚拟环境
+python3.10 -m venv ai-env
+
+# 激活它
+source ai-env/bin/activate
+```
+
+:::tip 专业提示
+在 `~/.zshrc` 中添加一个别名以快速激活：
+```bash
+echo 'alias aienv="source ~/AI-Projects/ai-env/bin/activate"' >> ~/.zshrc
+```
+现在只需输入 `aienv` 即可激活您的 AI 环境！
+:::
+
+## 步骤 4：安装必要工具
+
+激活虚拟环境后：
+
+```bash
+# 升级 pip
+pip install --upgrade pip
+
+# 安装常用 AI 库（Apple Silicon 优化版）
+pip install torch torchvision torchaudio
+pip install transformers accelerate
+pip install numpy pandas
+```
+
+## 步骤 5：验证 Metal 支持
+
+Apple 的 **Metal** 框架在 Mac 上实现 GPU 加速。验证它是否正常工作：
+
+```python
+import torch
+print(f"MPS 可用: {torch.backends.mps.is_available()}")
+print(f"MPS 已构建: {torch.backends.mps.is_built()}")
+```
+
+两者都应返回 `True`。
+
+## 故障排除
+
+### "找不到命令: brew"
+运行以下命令并重启终端：
+```bash
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+### Python 冲突
+如果您有多个 Python 版本，始终使用明确的版本命令：
+```bash
+python3.10 -m pip install <包名>
+```
+
+### Xcode 命令行工具
+某些包需要 Apple 的开发工具：
+```bash
+xcode-select --install
+```
+
+---
+
+✅ **准备就绪！** 继续前往 [Draw Things](/docs/apps/draw-things) 了解原生图像生成，或 [Pinokio](/docs/apps/pinokio) 了解一键安装器。
