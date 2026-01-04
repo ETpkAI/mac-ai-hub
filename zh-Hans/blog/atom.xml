@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://ETpkAI.github.io/mac-ai-hub/zh-Hans/blog</id>
+    <title>Mac AI Pilot Blog</title>
+    <updated>2026-01-04T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://ETpkAI.github.io/mac-ai-hub/zh-Hans/blog"/>
+    <subtitle>Mac AI Pilot Blog</subtitle>
+    <icon>https://ETpkAI.github.io/mac-ai-hub/zh-Hans/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Welcome to Mac AI Pilot]]></title>
+        <id>https://ETpkAI.github.io/mac-ai-hub/zh-Hans/blog/welcome-to-mac-ai-pilot</id>
+        <link href="https://ETpkAI.github.io/mac-ai-hub/zh-Hans/blog/welcome-to-mac-ai-pilot"/>
+        <updated>2026-01-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We're excited to launch Mac AI Pilot, your comprehensive guide to running AI models locally on Apple Silicon.]]></summary>
+        <content type="html"><![CDATA[<p>We're excited to launch <strong>Mac AI Pilot</strong>, your comprehensive guide to running AI models locally on Apple Silicon.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-we-offer">What We Offer<a href="https://etpkai.github.io/mac-ai-hub/zh-Hans/blog/welcome-to-mac-ai-pilot#what-we-offer" class="hash-link" aria-label="What We Offer的直接链接" title="What We Offer的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-tutorials">📚 Tutorials<a href="https://etpkai.github.io/mac-ai-hub/zh-Hans/blog/welcome-to-mac-ai-pilot#-tutorials" class="hash-link" aria-label="📚 Tutorials的直接链接" title="📚 Tutorials的直接链接" translate="no">​</a></h3>
+<p>Step-by-step guides for setting up AI tools on your Mac, from beginner to advanced.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-model-recommendations">🧮 Model Recommendations<a href="https://etpkai.github.io/mac-ai-hub/zh-Hans/blog/welcome-to-mac-ai-pilot#-model-recommendations" class="hash-link" aria-label="🧮 Model Recommendations的直接链接" title="🧮 Model Recommendations的直接链接" translate="no">​</a></h3>
+<p>Curated lists of the best GGUF models for different RAM configurations, with download links.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="️-app-guides">🛠️ App Guides<a href="https://etpkai.github.io/mac-ai-hub/zh-Hans/blog/welcome-to-mac-ai-pilot#%EF%B8%8F-app-guides" class="hash-link" aria-label="🛠️ App Guides的直接链接" title="🛠️ App Guides的直接链接" translate="no">​</a></h3>
+<p>In-depth coverage of native Mac AI applications like Draw Things and Pinokio.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-local-ai">Why Local AI?<a href="https://etpkai.github.io/mac-ai-hub/zh-Hans/blog/welcome-to-mac-ai-pilot#why-local-ai" class="hash-link" aria-label="Why Local AI?的直接链接" title="Why Local AI?的直接链接" translate="no">​</a></h2>
+<p>Running AI locally means:</p>
+<ul>
+<li class=""><strong>Complete privacy</strong> - Your data stays on your device</li>
+<li class=""><strong>No API costs</strong> - Run unlimited queries for free</li>
+<li class=""><strong>Offline capability</strong> - Work anywhere without internet</li>
+<li class=""><strong>Low latency</strong> - Instant responses without network delays</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="get-started">Get Started<a href="https://etpkai.github.io/mac-ai-hub/zh-Hans/blog/welcome-to-mac-ai-pilot#get-started" class="hash-link" aria-label="Get Started的直接链接" title="Get Started的直接链接" translate="no">​</a></h2>
+<ol>
+<li class="">Check out our <a class="" href="https://etpkai.github.io/mac-ai-hub/zh-Hans/docs/apps/setup-guide">Setup Guide</a> to prepare your Mac</li>
+<li class="">Use the <a class="" href="https://etpkai.github.io/mac-ai-hub/zh-Hans/docs/models/gguf-basics">RAM Calculator</a> to find the right model</li>
+<li class="">Browse our <a class="" href="https://etpkai.github.io/mac-ai-hub/zh-Hans/docs/models/top-models">Top Models</a> recommendations</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="coming-soon">Coming Soon<a href="https://etpkai.github.io/mac-ai-hub/zh-Hans/blog/welcome-to-mac-ai-pilot#coming-soon" class="hash-link" aria-label="Coming Soon的直接链接" title="Coming Soon的直接链接" translate="no">​</a></h2>
+<ul>
+<li class="">Weekly workflow tutorials</li>
+<li class="">Advanced optimization guides</li>
+<li class="">Community model benchmarks</li>
+<li class="">Video tutorials</li>
+</ul>
+<p>Stay tuned for more content!</p>
+<hr>
+<p><em>Have questions? Open an issue on our <a href="https://github.com/your-github-username/mac-ai-hub" target="_blank" rel="noopener noreferrer" class="">GitHub repository</a>.</em></p>]]></content>
+        <author>
+            <name>Mac AI Pilot Team</name>
+            <uri>https://github.com/your-github-username</uri>
+        </author>
+        <category label="Announcement" term="Announcement"/>
+        <category label="Getting Started" term="Getting Started"/>
+    </entry>
+</feed>
