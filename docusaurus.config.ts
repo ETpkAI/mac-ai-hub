@@ -103,6 +103,11 @@ const config: Config = {
         },
         { to: '/blog', label: 'Workflows', position: 'left' },
         {
+          to: '/docs/ai-news',
+          label: 'AI News',
+          position: 'left',
+        },
+        {
           href: 'https://github.com/ETpkAI/mac-ai-hub',
           label: 'GitHub',
           position: 'right',

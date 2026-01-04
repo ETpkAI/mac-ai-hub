@@ -1,0 +1,8 @@
+{
+    "label": "每日 AI 新闻",
+    "position": 4,
+    "link": {
+        "type": "doc",
+        "id": "ai-news/index"
+    }
+}

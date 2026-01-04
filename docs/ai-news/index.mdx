@@ -1,0 +1,44 @@
+---
+sidebar_position: 1
+title: "每日 AI 新闻 TOP10"
+description: "来自 Hacker News 的 AI 领域热门新闻，每日自动更新"
+---
+
+import NewsCalendar from '@site/src/components/NewsCalendar';
+import calendarData from './calendar-data.json';
+
+# 🗞️ 每日 AI 新闻 TOP10
+
+> 自动抓取 Hacker News 上的 AI 热门新闻，每天北京时间 8:00 更新
+
+## 📅 新闻日历
+
+点击有 📰 标记的日期查看当天的 AI 新闻 TOP10
+
+<NewsCalendar calendarData={calendarData} />
+
+---
+
+## 📊 数据来源
+
+本栏目的新闻来源于 [Hacker News](https://news.ycombinator.com)，经过以下关键词筛选：
+
+- **大模型**: LLM, GPT, Claude, Gemini, Llama, Mistral
+- **技术**: Machine Learning, Deep Learning, Neural Network, Transformer
+- **应用**: ChatGPT, Stable Diffusion, Midjourney, Computer Vision
+- **工具**: PyTorch, TensorFlow, Hugging Face, LangChain
+- **Mac 相关**: Apple Silicon, MLX, CoreML, Metal
+
+## 🔄 更新机制
+
+- **更新频率**: 每天 1 次
+- **更新时间**: 北京时间 08:00
+- **自动化**: GitHub Actions
+
+---
+
+## 🚀 最新新闻
+
+新功能刚刚上线！第一批新闻将在明天 08:00 自动更新。
+
+您也可以在 GitHub 仓库的 **Actions** 页面手动触发更新。

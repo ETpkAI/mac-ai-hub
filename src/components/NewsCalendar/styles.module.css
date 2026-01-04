@@ -1,0 +1,173 @@
+.calendarContainer {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: var(--ifm-card-background-color);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.calendarHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.monthYear {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.year {
+    font-size: 0.875rem;
+    color: var(--ifm-color-emphasis-600);
+}
+
+.month {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ifm-color-primary);
+}
+
+.navButton {
+    background: var(--ifm-color-emphasis-200);
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+
+.navButton:hover {
+    background: var(--ifm-color-emphasis-300);
+}
+
+.todayButton {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    background: var(--ifm-color-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: opacity 0.2s;
+}
+
+.todayButton:hover {
+    opacity: 0.9;
+}
+
+.weekdaysRow {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.weekday {
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: var(--ifm-color-emphasis-600);
+    padding: 0.5rem 0;
+}
+
+.daysGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.emptyDay {
+    aspect-ratio: 1;
+}
+
+.dayCell {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: var(--ifm-color-emphasis-100);
+    transition: all 0.2s;
+    position: relative;
+}
+
+.dayCell.today {
+    border: 2px solid var(--ifm-color-primary);
+}
+
+.dayCell.hasNews {
+    background: linear-gradient(135deg, var(--ifm-color-primary-lightest), var(--ifm-color-primary-lighter));
+    cursor: pointer;
+}
+
+.dayCell.hasNews:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dayLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.dayNumber {
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.newsIndicator {
+    font-size: 0.625rem;
+    margin-top: 2px;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.legendItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--ifm-color-emphasis-600);
+}
+
+.legendIcon {
+    font-size: 0.875rem;
+}
+
+.legendToday {
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--ifm-color-primary);
+    border-radius: 4px;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .calendarContainer {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .dayCell.hasNews {
+    background: linear-gradient(135deg, var(--ifm-color-primary-dark), var(--ifm-color-primary-darker));
+}

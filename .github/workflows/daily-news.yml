@@ -1,0 +1,75 @@
+name: Daily AI News Update
+
+on:
+  schedule:
+    # Run at 00:00 UTC which is 08:00 Beijing time (UTC+8)
+    - cron: '0 0 * * *'
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-news:
+    name: Fetch AI News
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python Dependencies
+        run: |
+          pip install -r scripts/requirements.txt
+
+      - name: Fetch AI News
+        run: |
+          python scripts/fetch-ai-news.py
+
+      - name: Commit and Push
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add docs/ai-news/
+          git diff --staged --quiet || git commit -m "📰 Daily AI News Update - $(date +'%Y-%m-%d')"
+          git push
+
+  build-deploy:
+    name: Build and Deploy
+    needs: fetch-news
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          ref: main  # Get the latest commit with news
+
+      - name: Pull Latest Changes
+        run: git pull origin main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Site
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          publish_branch: gh-pages
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
