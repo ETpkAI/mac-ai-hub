@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunktemp_docusaurus=globalThis.webpackChunktemp_docusaurus||[]).push([[7472],{5513(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome to Mac AI Pilot","permalink":"/mac-ai-hub/zh-Hans/blog/welcome-to-mac-ai-pilot","unlisted":false,"date":"2026-01-04T00:00:00.000Z"}]}')}}]);

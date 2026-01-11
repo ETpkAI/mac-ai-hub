@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunktemp_docusaurus=globalThis.webpackChunktemp_docusaurus||[]).push([[7372],{366(t){t.exports=JSON.parse('{"authors":[{"name":"Mac AI Pilot Team","title":"Core Team","url":"https://github.com/your-github-username","imageURL":"https://github.com/identicons/mac-ai-pilot.png","key":"admin","page":null,"count":1}]}')}}]);
